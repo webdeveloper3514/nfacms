@@ -1,0 +1,44 @@
+{
+    "name": "grafite/builder",
+    "description": "Prepare your Laravel apps incredibly fast, with various commands, services, facades and boilerplates.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Lantz",
+            "email": "mattlantz@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3",
+        "doctrine/dbal": "^2.5",
+        "illuminate/support": "^5.6",
+        "grafite/crudmaker": "^1.3",
+        "grafite/formmaker": "^1.2",
+        "grafite/crypto": "~1.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "~1.0",
+        "mikey179/vfsStream": "^1.6",
+        "orchestra/testbench": "^3.6",
+        "phpunit/phpunit": "~7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Grafite\\Builder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Grafite\\Builder\\GrafiteBuilderProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
