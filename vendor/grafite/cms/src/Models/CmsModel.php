@@ -5,6 +5,7 @@ namespace Grafite\Cms\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use Grafite\Cms\Models\Link;
+use Grafite\Cms\Services\ContentHelper;
 
 class CmsModel extends Model
 {
@@ -99,7 +100,9 @@ class CmsModel extends Model
                 'blocks' => json_encode(array_merge($this->blocks, [ $slug => '' ]))
             ]);
         }
-
+        
+        $block = app(ContentHelper::class)->parseContent( $block );
+        
         return $block;
     }
 

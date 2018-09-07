@@ -1,4 +1,17 @@
+<div class="et_slide_in_menu_container">
+        <!--Logo Slide-->
+        <div class="et_slide_menu_top">
+            <span class="mobile_menu_bar et_pb_header_toggle et_toggle_slide_menu"></span>
+            <img src="http://naisaglobal.diy-test.biz/frontend/images/Naisa-Global-Logo-Rimg1.png" alt="logo" class="image-logo-slide" style="height: 47px;float: left;position: relative;top: 21px;">
+        </div>
+        <!-- .et_slide_menu_top -->
+        <div class="et_pb_fullscreen_nav_container">
 
+            <ul id="mobile_menu_slide" class="et_mobile_menu">
+                @menu('nfa-mobile-menu', 'cms-frontend::partials.nfa-mobile-menu')
+            </ul>
+        </div>
+    </div>
 <header id="main-header" data-height-onload="66">
     <div class="container clearfix et_menu_container">
         

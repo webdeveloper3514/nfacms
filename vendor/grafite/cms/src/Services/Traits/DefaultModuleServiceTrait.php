@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Grafite\Cms\Repositories\WidgetRepository;
 use Grafite\Cms\Services\FileService;
-use Grafite\Cms\Services\BlogService;
+use Grafite\Cms\Services\ContentHelper;
 
 trait DefaultModuleServiceTrait
 {
@@ -43,9 +43,9 @@ trait DefaultModuleServiceTrait
             }
 
             if (config('app.locale') !== config('cms.default-language') && $widget->translation(config('app.locale'))) {
-                return $widget->translationData(config('app.locale'))->content;
+                return app(ContentHelper::class)->parseContent( $widget->translationData(config('app.locale'))->content );
             } else {
-                return app(BlogService::class)->parseContent( $widget->content );
+                return app(ContentHelper::class)->parseContent( $widget->content );
             }
         }
 

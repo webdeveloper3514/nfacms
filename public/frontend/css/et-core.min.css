@@ -209,7 +209,10 @@ li {
 .et_pb_slide_menu_active #page-container {
     left: 0px!important
 }
-
+.et_pb_slide_menu_opened {
+    right: auto!important;
+    left: 0!important;
+}
 .et_pb_slide_menu_active .et_slide_in_menu_container.et_pb_slide_menu_opened {
     right: auto!important;
     left: 0!important
